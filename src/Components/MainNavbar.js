@@ -1,18 +1,18 @@
 import { NavLink } from "react-router-dom";
 import "../Css/MainNavbar.css";
- 
+
 const tabs = [
-  { path: "/student-profile", label: "Student Profile" },
-  { path: "/payments", label: "Payments" },
-  { path: "/transport", label: "Transport" },
-  { path: "/academics", label: "Academics" },
-  { path: "/alerts", label: "Alerts" },
-  { path: "/history", label: "History" },
-  { path: "/room-allotment", label: "Room Allotment" },
-  { path: "/issue-forms", label: "Issue Forms" },
-  { path: "/certificates", label: "Certificates" },
+  { path: "/students/studentsprofile", label: "Student Profile" },
+  { path: "/students/payments", label: "Payments" },
+  { path: "/students/transport", label: "Transport" },
+  { path: "/students/academics", label: "Academics" },
+  { path: "/students/alerts", label: "Alerts" },
+  { path: "/students/history", label: "History" },
+  { path: "/students/roomallotment", label: "Room Allotment" },
+  { path: "/students/issueforms", label: "Issue Forms" },
+  { path: "/students/certificates", label: "Certificates" },
 ];
- 
+
 const MainNavbar = () => {
   return (
     <div
@@ -33,5 +33,5 @@ const MainNavbar = () => {
     </div>
   );
 };
- 
+
 export default MainNavbar;
