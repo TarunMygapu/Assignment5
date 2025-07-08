@@ -3,7 +3,8 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import MainNavbar from './MainNavbar';
 import StudentInfoHeader from './StudentInfoHeader';
 import FeeSummary from './FeeSummary';
- 
+import Information from './Information';
+
 // Placeholder components for student routes
 const PaymentsPage = () => <div>Payments Page</div>;
 const TransportPage = () => <div>Transport Page</div>;
@@ -13,11 +14,11 @@ const HistoryPage = () => <div>History Page</div>;
 const RoomAllotmentPage = () => <div>Room Allotment Page</div>;
 const IssueFormsPage = () => <div>Issue Forms Page</div>;
 const CertificatesPage = () => <div>Certificates Page Content</div>;
- 
+
 const StudentsLayout = () => {
   const location = useLocation();
   const showStudentInfoHeader = location.pathname.endsWith('/studentsprofile');
- 
+
   return (
     <div
       style={{
@@ -31,13 +32,13 @@ const StudentsLayout = () => {
       {/* Left Section (73%) */}
       <div style={{ width: '73%', padding: '10px' }}>
         <MainNavbar />
-       
+        
         {/* Only show StudentInfoHeader on /students/studentsprofile */}
         {showStudentInfoHeader && <StudentInfoHeader />}
- 
+
         <div style={{ padding: '10px' }}>
           <Routes>
-       
+        
             <Route path="studentsprofile" element={<FeeSummary />} />
             <Route path="payments" element={<PaymentsPage />} />
             <Route path="transport" element={<TransportPage />} />
@@ -50,7 +51,7 @@ const StudentsLayout = () => {
           </Routes>
         </div>
       </div>
- 
+
       {/* Right Section (27%) */}
       <div
         style={{
@@ -60,10 +61,10 @@ const StudentsLayout = () => {
           overflowY: 'auto',
         }}
       >
-        <div style={{}}>Teja</div>
+        <Information/>
       </div>
     </div>
   );
 };
- 
+
 export default StudentsLayout;

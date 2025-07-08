@@ -6,6 +6,7 @@ import StudentProfile from './Components/StudentProfile';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import StudentsLayout from './Components/StudentsLayout'; // Student layout (includes student routing)
+import Information from './Components/Information';
 
 
 function App() {
@@ -49,7 +50,7 @@ const AppContent = ({ isSidebarExpanded, setIsSidebarExpanded, isProfileExpanded
         <aside
           className="border-end"
           style={{
-            width: isSidebarExpanded ? '15vw' : '5%',
+            width: isSidebarExpanded ? '15vw' : '5vw',
             backgroundColor: '#f5f5f5',
             transition: 'width 0.3s ease',
             zIndex: 1,
@@ -61,7 +62,7 @@ const AppContent = ({ isSidebarExpanded, setIsSidebarExpanded, isProfileExpanded
         </aside>
 
         {/* Main Content Area */}
-        <div className="main-container d-flex flex-row" style={{ flexGrow: 1, position: 'relative', overflow: 'visible' }}>
+        <div className="main-container d-flex flex-row" style={{ flexGrow: 1, position: 'relative', overflow: 'visible', width:'95vw' }}>
           <div
             className="content-area d-flex flex-column"
             style={{
@@ -71,19 +72,28 @@ const AppContent = ({ isSidebarExpanded, setIsSidebarExpanded, isProfileExpanded
               transition: 'transform 0.3s ease',
               transform: isProfileExpanded ? 'translateY(56%)' : 'translateY(0)',
               position: 'relative',
+              width:'100%'
             }}
           >
             <Routes>
               <Route path="/students/*" element={<StudentsLayout />} />
               <Route path="/application/*" element={<div> Application Layout </div>} />
-              {/* Add other sections like /employee, /fleet with separate layouts if needed */}
+              <Route path="/employee" element={<div>Employee</div>} />
+              <Route path="/fleet" element={<div>Fleet</div>} />
+              <Route path="/warehouse" element={<div>Warehouse</div>} />
+              <Route path="/sms" element={<div>SMS</div>} />
+              <Route path="/question-bank" element={<div>Question-bank</div>} />
+              <Route path="/assets-management" element={<div>Assets Management</div>} />
+              <Route path="/payment-services" element={<div>Payment Services</div>} />
+              <Route path="/cctv" element={<div>CCTV</div>} />
+              <Route path="/hrms" element={<div>HRMS</div>} />
               <Route path="/" element={<div></div>} />
             </Routes>
           </div>
 
           {/* Student Profile (Floating Panel) */}
           {isStudentRoute && (
-            <div style={{ position: 'absolute', top: 0, right: 0, zIndex: 2000 }}>
+            <div style={{ position: 'absolute', top: 0, right: 0, width:'100%' }}>
               <StudentProfile onToggle={handleProfileToggle} isExpanded={isProfileExpanded} />
             </div>
           )}
