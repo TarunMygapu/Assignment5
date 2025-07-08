@@ -1,0 +1,32 @@
+/* src/components/MainNavbar.css */
+ 
+.main-navbar {
+ border-radius: 10px;
+border: 1px solid #EDEDED;
+background: var(--Light-Gray-Light-Gray-5, #F6F8F9);
+box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.06);
+ 
+}
+ 
+.nav-tab {
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  color: #000;
+ font-family: 'Inter', sans-serif;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+ 
+.active-tab {
+color: #3425FF;
+  font-weight: 800;
+  font-size: 14px;
+  border-radius: 6px;
+   font-family: 'Inter', sans-serif;
+background: #FFF;
+box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.25);
+}
+ 
+ 

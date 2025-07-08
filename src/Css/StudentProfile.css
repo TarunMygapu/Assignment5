@@ -1,0 +1,45 @@
+/* StudentProfile.css */
+.custom-switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 19px;
+}
+
+.custom-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #BAD7FF; /* background */
+  border-radius: 34px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.4s;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  left: 0;
+  bottom: 2px;
+  background-color: #3425FF; /* knob color */
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #BAD7FF; /* same or change if you want */
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px); /* Moves the knob to the right */
+}
